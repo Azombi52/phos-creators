@@ -2,6 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Brutal Milk (headings) ─────────────────────────────────── */
+@font-face {
+  font-family: 'Brutal Milk';
+  src: url('/fonts/Brutal Milk/Brutal Milk Regular/Brutal-Milk-No-3-Regular_005953.woff2') format('woff2'),
+       url('/fonts/Brutal Milk/Brutal Milk Regular/Brutal-Milk-No-3-Regular_005953.woff')  format('woff'),
+       url('/fonts/Brutal Milk/Brutal Milk Regular/Brutal-Milk-No-3-Regular_005953.ttf')   format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Brutal Milk';
+  src: url('/fonts/Brutal Milk/Brutal Milk Semibold/Brutal-Milk-No-3-Semibold_001617.woff2') format('woff2'),
+       url('/fonts/Brutal Milk/Brutal Milk Semibold/Brutal-Milk-No-3-Semibold_001617.woff')  format('woff'),
+       url('/fonts/Brutal Milk/Brutal Milk Semibold/Brutal-Milk-No-3-Semibold_001617.ttf')   format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Brutal Milk';
+  src: url('/fonts/Brutal Milk/Brutal Milk Bold/Brutal-Milk-No-3-Bold_005948.woff2') format('woff2'),
+       url('/fonts/Brutal Milk/Brutal Milk Bold/Brutal-Milk-No-3-Bold_005948.woff')  format('woff'),
+       url('/fonts/Brutal Milk/Brutal Milk Bold/Brutal-Milk-No-3-Bold_005948.ttf')   format('truetype');
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Degular (body) ─────────────────────────────────────────── */
+@font-face {
+  font-family: 'Degular';
+  src: url('/fonts/Degular/Degular-Regular/Degular-Regular.woff2') format('woff2'),
+       url('/fonts/Degular/Degular-Regular/Degular-Regular.woff')  format('woff'),
+       url('/fonts/Degular/Degular-Regular/Degular-Regular.ttf')   format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Degular';
+  src: url('/fonts/Degular/Degular-Semibold/Degular-Semibold.woff2') format('woff2'),
+       url('/fonts/Degular/Degular-Semibold/Degular-Semibold.woff')  format('woff'),
+       url('/fonts/Degular/Degular-Semibold/Degular-Semibold.ttf')   format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Degular';
+  src: url('/fonts/Degular/Degular-Black/Degular-Black.woff2') format('woff2'),
+       url('/fonts/Degular/Degular-Black/Degular-Black.woff')  format('woff'),
+       url('/fonts/Degular/Degular-Black/Degular-Black.ttf')   format('truetype');
+  font-weight: 800 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Base ───────────────────────────────────────────────────── */
 @layer base {
   * {
     box-sizing: border-box;
@@ -11,49 +70,65 @@
   }
   body {
     margin: 0;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Degular', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: #ffffff;
-    color: #1a1d26;
+    color: #052c3c;
   }
   #root {
     min-height: 100vh;
   }
+
+  /* Brutal Milk on all headings — automatically applied */
+  h1, h2, h3, h4 {
+    font-family: 'Brutal Milk', serif;
+    letter-spacing: -0.01em;
+  }
 }
 
+/* ─── Utilities ──────────────────────────────────────────────── */
 @layer utilities {
+  .font-display {
+    font-family: 'Brutal Milk', serif;
+  }
+
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Mustard gradient text — reads well on dark backgrounds */
   .gradient-text {
-    background: linear-gradient(135deg, #dc741a 0%, #e4913b 50%, #ecb472 100%);
+    background: linear-gradient(135deg, #F1C142 0%, #fde040 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  /* Darker mustard gradient — reads on white/mid backgrounds */
   .gradient-text-dark {
-    background: linear-gradient(135deg, #ab4510 0%, #dc741a 60%, #e4913b 100%);
+    background: linear-gradient(135deg, #d4a01c 0%, #F1C142 60%, #f8cc22 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  /* Subtle mustard grid texture used in dark hero sections */
   .bg-grid {
     background-image:
-      linear-gradient(rgba(220, 116, 26, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(220, 116, 26, 0.05) 1px, transparent 1px);
+      linear-gradient(rgba(241, 193, 66, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(241, 193, 66, 0.06) 1px, transparent 1px);
     background-size: 40px 40px;
   }
-  .bg-noise {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  }
+
   .card-hover {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   .card-hover:hover {
     transform: translateY(-2px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 40px rgba(2, 21, 32, 0.08);
   }
+
   .animate-delay-100 { animation-delay: 100ms; }
   .animate-delay-200 { animation-delay: 200ms; }
   .animate-delay-300 { animation-delay: 300ms; }

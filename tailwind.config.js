@@ -7,35 +7,38 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Primary brand accent — Mustard (#F1C142 from phoscreatives.africa)
         phos: {
-          50:  '#fdf6ee',
-          100: '#faebd6',
-          200: '#f4d3a8',
-          300: '#ecb472',
-          400: '#e4913b',
-          500: '#dc741a',
-          600: '#ce5c10',
-          700: '#ab4510',
-          800: '#893714',
-          900: '#6f2f13',
-          950: '#3c1507',
+          50:  '#fefce8',
+          100: '#fef5c0',
+          200: '#feec82',
+          300: '#fde040',
+          400: '#f8cc22',
+          500: '#F1C142', // ← brand mustard
+          600: '#d4a01c', // ← button hover
+          700: '#a87c18',
+          800: '#7d5d12',
+          900: '#5c430f',
+          950: '#36270a',
         },
+        // Dark anchor — Teal-Navy (derived from #0d789e, phoscreatives.africa)
         ink: {
-          50:  '#f6f6f7',
-          100: '#e1e3e6',
-          200: '#c3c7ce',
-          300: '#9da3af',
-          400: '#788090',
-          500: '#5e6676',
-          600: '#4a5160',
-          700: '#3d4250',
-          800: '#343944',
-          900: '#1a1d26',
-          950: '#0e1018',
+          50:  '#eef7fb',
+          100: '#d5edf7',
+          200: '#aad9ee',
+          300: '#72bde2',
+          400: '#3a9dcb',
+          500: '#1585b0',
+          600: '#0d789e', // ← brand teal
+          700: '#0a5e7d',
+          800: '#08445c',
+          900: '#052c3c', // ← headlines / dark text
+          950: '#021520', // ← hero backgrounds
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Degular', 'system-ui', 'sans-serif'],
+        display: ['"Brutal Milk"', 'serif'],
       },
       animation: {
         'fade-up': 'fadeUp 0.6s ease-out forwards',
@@ -43,11 +46,11 @@ export default {
       },
       keyframes: {
         fadeUp: {
-          '0%': { opacity: '0', transform: 'translateY(24px)' },
+          '0%':   { opacity: '0', transform: 'translateY(24px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         fadeIn: {
-          '0%': { opacity: '0' },
+          '0%':   { opacity: '0' },
           '100%': { opacity: '1' },
         },
       },
