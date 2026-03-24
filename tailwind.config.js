@@ -21,19 +21,19 @@ export default {
           900: '#5c430f',
           950: '#36270a',
         },
-        // Dark anchor — Warm neutral (complements mustard, no blue)
+        // Dark anchor — built around #0C789E (brand teal)
         ink: {
-          50:  '#f7f6f3',
-          100: '#eceae4',
-          200: '#d5d0c4',
-          300: '#b5ae9e',
-          400: '#8f8572',
-          500: '#6b6350',
-          600: '#514b3b',
-          700: '#3a3526',
-          800: '#252116',
-          900: '#161410',
-          950: '#0c0b09', // ← hero backgrounds
+          50:  '#eef8fc',
+          100: '#d5eef7',
+          200: '#aadaee',
+          300: '#72bfe2',
+          400: '#35a0ce',
+          500: '#1589b8',
+          600: '#0C789E', // ← exact brand color (nav text, body text)
+          700: '#095f7e',
+          800: '#07475f',
+          900: '#04303f',
+          950: '#021a23', // ← hero backgrounds
         },
       },
       fontFamily: {

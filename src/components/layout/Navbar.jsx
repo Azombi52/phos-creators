@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { label: 'How It Works', href: '/how-it-works' },
@@ -29,13 +29,13 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-18">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-phos-500 to-phos-700 flex items-center justify-center shadow-sm">
+          <Link to="/" className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-phos-500 flex items-center justify-center shadow-sm">
               <span className="text-white font-bold text-sm">P</span>
             </div>
-            <span className="font-bold text-ink-900 text-lg tracking-tight">
+            <span className="font-bold text-ink-600 text-lg tracking-tight">
               Phos <span className="text-phos-600">Creators</span>
             </span>
           </Link>
@@ -46,7 +46,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
                   location.pathname === link.href
                     ? 'text-phos-600 bg-phos-50'
                     : 'text-ink-600 hover:text-ink-900 hover:bg-ink-50'
@@ -61,13 +61,13 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <Link
               to="/login"
-              className="px-4 py-2 text-sm font-medium text-ink-700 hover:text-ink-900 transition-colors"
+              className="px-4 py-2 text-sm font-semibold text-ink-600 hover:text-ink-900 transition-colors"
             >
               Sign in
             </Link>
             <Link
               to="/signup"
-              className="px-4 py-2 text-sm font-semibold text-white bg-ink-900 hover:bg-ink-800 rounded-lg transition-colors"
+              className="px-4 py-2 text-sm font-semibold text-white bg-ink-600 hover:bg-ink-700 rounded-lg transition-colors"
             >
               Start for free
             </Link>
@@ -76,7 +76,7 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden p-2 rounded-lg text-ink-600 hover:bg-ink-100 transition-colors"
+            className="lg:hidden p-2 rounded-lg text-ink-600 hover:bg-ink-50 transition-colors"
           >
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -91,7 +91,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 to={link.href}
-                className="block px-4 py-3 rounded-lg text-sm font-medium text-ink-700 hover:text-ink-900 hover:bg-ink-50 transition-colors"
+                className="block px-4 py-3 rounded-lg text-sm font-semibold text-ink-600 hover:text-ink-900 hover:bg-ink-50 transition-colors"
               >
                 {link.label}
               </Link>
@@ -99,13 +99,13 @@ export default function Navbar() {
             <div className="pt-3 border-t border-ink-100 flex flex-col gap-2">
               <Link
                 to="/login"
-                className="px-4 py-3 text-sm font-medium text-ink-700 text-center border border-ink-200 rounded-lg hover:bg-ink-50 transition-colors"
+                className="px-4 py-3 text-sm font-semibold text-ink-600 text-center border border-ink-200 rounded-lg hover:bg-ink-50 transition-colors"
               >
                 Sign in
               </Link>
               <Link
                 to="/signup"
-                className="px-4 py-3 text-sm font-semibold text-white bg-ink-900 rounded-lg text-center hover:bg-ink-800 transition-colors"
+                className="px-4 py-3 text-sm font-semibold text-white bg-ink-600 rounded-lg text-center hover:bg-ink-700 transition-colors"
               >
                 Start for free
               </Link>
