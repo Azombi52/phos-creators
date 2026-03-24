@@ -21,19 +21,19 @@ export default {
           900: '#5c430f',
           950: '#36270a',
         },
-        // Dark anchor — Teal-Navy (derived from #0d789e, phoscreatives.africa)
+        // Dark anchor — Warm neutral (complements mustard, no blue)
         ink: {
-          50:  '#eef7fb',
-          100: '#d5edf7',
-          200: '#aad9ee',
-          300: '#72bde2',
-          400: '#3a9dcb',
-          500: '#1585b0',
-          600: '#0d789e', // ← brand teal
-          700: '#0a5e7d',
-          800: '#08445c',
-          900: '#052c3c', // ← headlines / dark text
-          950: '#021520', // ← hero backgrounds
+          50:  '#f7f6f3',
+          100: '#eceae4',
+          200: '#d5d0c4',
+          300: '#b5ae9e',
+          400: '#8f8572',
+          500: '#6b6350',
+          600: '#514b3b',
+          700: '#3a3526',
+          800: '#252116',
+          900: '#161410',
+          950: '#0c0b09', // ← hero backgrounds
         },
       },
       fontFamily: {
