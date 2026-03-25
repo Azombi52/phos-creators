@@ -50,7 +50,7 @@ export default function SignupPage() {
     setServerError('')
     try {
       await signUp({ ...form, role })
-      navigate('/dashboard')
+      navigate(role === 'client' ? '/client-dashboard' : '/dashboard')
     } catch (err) {
       setServerError(err.message || 'Something went wrong. Please try again.')
     } finally {

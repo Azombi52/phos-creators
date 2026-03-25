@@ -31,8 +31,8 @@ export default function LoginPage() {
     if (Object.keys(errs).length > 0) { setErrors(errs); return }
     setLoading(true)
     try {
-      await signIn(form)
-      navigate('/dashboard')
+      const result = await signIn(form)
+      navigate(result.role === 'client' ? '/client-dashboard' : '/dashboard')
     } catch (err) {
       setServerError('Invalid email or password. Please try again.')
     } finally {

@@ -16,7 +16,7 @@ import AboutPage from './pages/AboutPage'
 import SignupPage from './pages/SignupPage'
 import LoginPage from './pages/LoginPage'
 
-// Dashboard (nested)
+// Creator dashboard (nested)
 import DashboardLayout from './pages/dashboard/DashboardLayout'
 import OverviewPage from './pages/dashboard/OverviewPage'
 import ProjectsPage from './pages/dashboard/ProjectsPage'
@@ -26,6 +26,14 @@ import ContractsPage from './pages/dashboard/ContractsPage'
 import PaymentsPage from './pages/dashboard/PaymentsPage'
 import StorefrontPage from './pages/dashboard/StorefrontPage'
 import SettingsPage from './pages/dashboard/SettingsPage'
+
+// Client dashboard (nested)
+import ClientLayout from './pages/client/ClientLayout'
+import ClientOverviewPage from './pages/client/ClientOverviewPage'
+import ClientProjectsPage from './pages/client/ClientProjectsPage'
+import ClientMessagesPage from './pages/client/ClientMessagesPage'
+import ClientPaymentsPage from './pages/client/ClientPaymentsPage'
+import ClientSettingsPage from './pages/client/ClientSettingsPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -75,6 +83,19 @@ export default function App() {
             <Route path="payments" element={<PaymentsPage />} />
             <Route path="storefront" element={<StorefrontPage />} />
             <Route path="settings" element={<SettingsPage />} />
+          </Route>
+
+          {/* Protected client dashboard */}
+          <Route path="/client-dashboard" element={
+            <ProtectedRoute>
+              <ClientLayout />
+            </ProtectedRoute>
+          }>
+            <Route index element={<ClientOverviewPage />} />
+            <Route path="projects" element={<ClientProjectsPage />} />
+            <Route path="messages" element={<ClientMessagesPage />} />
+            <Route path="payments" element={<ClientPaymentsPage />} />
+            <Route path="settings" element={<ClientSettingsPage />} />
           </Route>
 
           <Route path="*" element={<PublicLayout><HomePage /></PublicLayout>} />

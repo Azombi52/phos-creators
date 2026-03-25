@@ -63,7 +63,14 @@ export function AuthProvider({ children }) {
   async function signIn({ email, password }) {
     const { data, error } = await supabase.auth.signInWithPassword({ email, password })
     if (error) throw error
-    return data
+    // Fetch role so the caller can redirect to the right dashboard
+    const { data: profileData } = await supabase
+      .from('profiles')
+      .select('role')
+      .eq('id', data.user.id)
+      .single()
+    const role = profileData?.role || data.user.user_metadata?.role || 'creator'
+    return { ...data, role }
   }
 
   async function signOut() {
